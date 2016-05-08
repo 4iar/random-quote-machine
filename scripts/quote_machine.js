@@ -30,6 +30,7 @@ function new_quote() {
 function display_new_quote(quote) {
     // Set the quote body
     $('#quote-text').text(quote.text);
+    $('#quote-authour').text(quote.authour);
 
     //TODO: implement authour
     //$('#quote-authour').text(quote.authour);
