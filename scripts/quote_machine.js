@@ -16,9 +16,7 @@ $(document).ready(function() {
 });
 
 function new_quote() {
-    // Use JSONP to overcome the XMLHTTPRequest same domain policy.
-    // jQuery can handle this if callback is set to '?'
-    $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=?", function(result) {
+    $.getJSON("https://crossorigin.me/http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=?", function(result) {
         // The API provides content (the quote) as HTML enclosed in <p></p> tags.
         // So use the jQuery(html).text() function to strip it out.
         var quote = {};
