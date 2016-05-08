@@ -1,3 +1,12 @@
+$(document).ajaxStart(function() {
+    $("#refresh-spinner").addClass("fa-spin");
+});
+
+$(document).ajaxStop(function() {
+    // TODO: add smooth transition
+    $("#refresh-spinner").removeClass("fa-spin");
+});
+
 $(document).ready(function() {
     new_quote();
 
@@ -7,10 +16,6 @@ $(document).ready(function() {
 });
 
 function new_quote() {
-    // Make the refresh fa-icon spin
-    // separate these into another function?
-    $("#refresh-spinner").addClass("fa-spin");
-
     // Use JSONP to overcome the XMLHTTPRequest same domain policy.
     // jQuery can handle this if callback is set to '?'
     $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&_jsonp=?", function(result) {
@@ -22,7 +27,6 @@ function new_quote() {
 
         display_new_quote(quote);
     });
-    $("#refresh-spinner").removeClass("fa-spin");
 }
 
 function display_new_quote(quote) {
