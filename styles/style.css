@@ -1,0 +1,13 @@
+body {
+  background-color: #FAFAFA;
+}
+
+#quote-box {
+  margin: 10% 5% 00% 5%;
+  padding: 5% 2% 2% 2%;
+  background-color: #FB6A74;
+}
+
+#quote-text {
+  colour: white;
+}
