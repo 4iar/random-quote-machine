@@ -12,6 +12,10 @@ body {
   colour: white;
 }
 
-#buttons-box{
+#buttons-div {
   margin-top: 35px;
+}
+
+#authour-div {
+  margin-top: 15px;
 }
