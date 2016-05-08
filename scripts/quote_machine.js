@@ -1,10 +1,12 @@
 $(document).ajaxStart(function() {
     $("#refresh-spinner").addClass("fa-spin");
+    $('#twitter-button').addClass("disabled");
 });
 
 $(document).ajaxStop(function() {
     // TODO: add smooth transition
     $("#refresh-spinner").removeClass("fa-spin");
+    $('#twitter-button').removeClass("disabled");
 });
 
 $(document).ready(function() {
@@ -32,4 +34,9 @@ function display_new_quote(quote) {
     $('#quote-text').text(quote.text);
     $('#quote-authour').text(quote.authour);
 
+    // And then the twitter text
+    var share_link="https://twitter.com/intent/tweet?text="
+    share_link += '"' + quote.text + " - " + quote.authour;
+    // encodeURI to convert spaces and other formatting (e.g. spc --> %20)
+    $('#twitter-button').prop('href', encodeURI(share_link));
 }
